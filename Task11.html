@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel System with Responsive Grid & Scroll-to-Top</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            text-align: center;
+            background: linear-gradient(to right, #eef2f3, #8e9eab);
+            color: #333;
+        }
+
+        /* Parallax Section */
+        .parallax {
+            height: 400px;
+            background: url('https://source.unsplash.com/1600x900/?travel') no-repeat center;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            background-blend-mode: overlay;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 40px;
+            background: white;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        /* Responsive Card Grid */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .card {
+            background: linear-gradient(135deg,  #ff7e5f, #feb47b);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: white;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        .spacer {
+            height: 200px;
+        }
+
+        /* Scroll to Top Button */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            transition: opacity 0.3s, transform 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #scrollTopBtn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Parallax Section -->
+    <div class="parallax">Explore the World with Our Travel System</div>
+
+    <div class="content">
+        <h2>Your Journey Begins Here</h2>
+        <p>Welcome to our travel system. Discover destinations, book tickets, and plan your next adventure with ease.</p>
+    </div>
+
+    <!-- Responsive Card Grid -->
+    <div class="card-container">
+        <div class="card">
+            
+            <h3>Beach Destinations</h3>
+            <p>Relax on the world's most beautiful beaches.</p>
+        </div>
+        <div class="card">
+           
+            <h3>Mountain Adventures</h3>
+            <p>Hike and explore majestic mountain ranges.</p>
+        </div>
+        <div class="card">
+           
+            <h3>City Escapes</h3>
+            <p>Explore vibrant cities and their rich cultures.</p>
+        </div>
+        <div class="card">
+            
+            <h3>Forest Retreats</h3>
+            <p>Immerse yourself in nature with peaceful forest getaways.</p>
+        </div>
+    </div>
+
+    <div class="parallax">Book Your Dream Vacation Today</div>
+
+    <div class="content">
+        <h2>Our Services</h2>
+        <p>Whether you're planning a weekend getaway or a month-long adventure, our system offers everything you need to make your travel dreams come true.</p>
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" onclick="scrollToTop()">&#8679;</button>
+
+    <script>
+        // Show/hide scroll-to-top button
+        window.onscroll = function () {
+            let btn = document.getElementById("scrollTopBtn");
+            if (document.documentElement.scrollTop > 100) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+
+        // Smooth Scroll to Top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
